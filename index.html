@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mandaluz</title>
+    <link rel="stylesheet" href="main.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Parisienne&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!--==================== LOADING ANIMATION ====================-->
+    <div id="loading" style="display:inline">
+        <div>
+            <h1 class="loading-title">MandaLuz</h1>
+            <img loading="lazy" src="assets/loading.gif" alt="">
+        </div>
+    </div>
+
+    <!--==================== CONTENT ====================-->
+    <div id="conteudo" style="display: none">
+        <header>
+            <div class="header-container">
+                <img src="assets/logo.png" alt="">
+                <!-- <h1>MandaLuz</h1> -->
+                <div>
+                    <h1>MandaLuz</h1>
+                    <h2>Nayara Muniz</h2>
+                </div>
+            </div>
+        </header>
+        
+        <div class="container">
+            <form id="form">
+                <div class="input-info">
+                    <span>Valor da sessão</span>
+                    <input required type="number" name="valor" value="valorSessao" min='0' step="any" id="valorValue">
+                </div>
+                <span id="errorMessage"></span>
+                <button type="submit">Confirmar</button>
+            </form>
+        
+            <div class="max-width">
+                <div class="button-container">
+                    <button disabled onclick="start();" class="disabled" id="iniciarBotao"
+                        title="Insira o valor da sessão no campo acima para continuar">Iniciar</button>
+                    <button onclick="pause();" class="bg-yellow" title="Pausar">Pausar</button>
+                    <button onclick="stop();" class="bg-red" title="Encerrar">Encerrar</button>
+                </div>
+                <h1 id="counter">00:00:00</h1>
+            </div>
+        
+            <table>
+                <thead>
+                    <tr>
+                        <th>Valor por hora</th>
+                        <th>Tempo de consulta</th>
+                        <th>Valor da sessão</th>
+                    </tr>
+                </thead>
+        
+                <tbody>
+                    <tr>
+                        <td>R$ <span id="valorHora"></span></td>
+                        <td id="tempoConsulta"></td>
+                        <td>R$ <span id="valorTotal"></span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+<script src="cron.js"></script>
+</body>
+
+</html>
