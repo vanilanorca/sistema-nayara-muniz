@@ -259,3 +259,14 @@ footer span a{
         text-align: center;
     }
 }
+
+@media (max-width: 390px) and (max-height: 843px){
+    html{
+        overflow: auto;
+        overflow-x: hidden;
+    }
+
+    footer {
+        position:relative;
+    }
+}
