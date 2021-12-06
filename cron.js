@@ -5,8 +5,8 @@ function load (){
     document.getElementById("loading").style.display = "none";
     document.getElementById("conteudo").style.display = "inherit";
 }
-window.onload = load()
-// window.onload = (function () { window.setInterval('load()',2000);})
+
+window.onload = (function () { window.setInterval('load()',2000);})
 
 // capturar valor da sessao
 var form = document.getElementById('form');
