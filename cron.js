@@ -6,21 +6,21 @@ function load (){
     document.getElementById("conteudo").style.display = "inherit";
 }
 
-window.onload = (function () { window.setInterval('load()',2000);})
+window.onload = (function () { window.setInterval('load()', 1000);})
 
 // capturar valor da sessao
 var form = document.getElementById('form');
+let iniciarBotao = document.getElementById("iniciarBotao");
+
 form.addEventListener('submit', function(e){
     let valorValue = document.getElementById('valorValue').value;
     document.getElementById('valorHora').innerHTML= valorValue;
     e.preventDefault();
 
-    let iniciarBotao = document.getElementById('iniciarBotao')
     iniciarBotao.disabled = false
     iniciarBotao.title = 'Iniciar'
     iniciarBotao.classList.add('bg-green');
     iniciarBotao.classList.remove('disabled');
-
 })
 
 var hh = 0;
@@ -33,6 +33,9 @@ var cron;
 //Inicia o temporizador
 function start() {
     cron = setInterval(() => { timer(); }, tempo);
+    
+    iniciarBotao.disabled = true;
+    iniciarBotao.classList.add("disabled");
 }
 
 //Para o temporizador mas não limpa as variáveis
@@ -87,6 +90,12 @@ function timer() {
     //Retorna o valor tratado
     return format;
 };
+
+
+// nova consulta
+document.getElementById("nova-consulta").addEventListener("click", () => {
+    document.location.reload(true);
+  });
 
 
 

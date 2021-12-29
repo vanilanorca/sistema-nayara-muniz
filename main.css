@@ -193,6 +193,12 @@ tbody tr{
     font-size: 1.1rem
 }
 
+#nova-consulta{
+    margin: 0 auto;
+    display: block;
+    margin-top: 20px;
+}
+
 footer {
    position:absolute;
    bottom:0;
